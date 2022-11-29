@@ -25,8 +25,8 @@ apt-get install -y software-properties-common && \
 apt-get install -y make byobu curl git htop man unzip vim wget \
 libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
 llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev openssl && \
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash && \
 wget -O- https://aka.ms/install-vscode-server/setup.sh | sh && \
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash && \
 source ~/.bashrc && \
 source ~/.nvm/nvm.sh && \
 nvm install node && \
