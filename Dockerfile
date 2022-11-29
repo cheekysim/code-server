@@ -1,9 +1,4 @@
-#
-# Ubuntu Dockerfile
-#
-# https://github.com/dockerfile/ubuntu
-#
-
+# syntax=docker/dockerfile:1
 # Pull base image.
 FROM ubuntu:22.04
 
