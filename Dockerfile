@@ -5,6 +5,12 @@ FROM ubuntu:22.04
 # Set shell to bash.
 SHELL ["/bin/bash", "-c"]
 
+# Set environment variables.
+ENV HOME /root
+
+# Define working directory.
+WORKDIR /root
+
 # Create nvm folder.
 RUN mkdir /root/.nvm
 ENV NVM_DIR=/root/.nvm
@@ -31,13 +37,6 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
 exec "$SHELL" && \
 pyenv install 3.11 && \
 pyenv global 3.11
-
-
-# Set environment variables.
-ENV HOME /root
-
-# Define working directory.
-WORKDIR /root
 
 # Define default command.
 CMD ["/bin/bash", "-c"]
