@@ -2,6 +2,7 @@ version: '3'
 services:
   code-server:
     container_name: code-server
+    pull_policy: build
     build: .
     stdin_open: true
     tty: true
