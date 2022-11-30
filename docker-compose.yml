@@ -9,7 +9,7 @@ services:
     entrypoint: 'code-server serve-local --accept-server-license-terms --port=8001 --host=${HOST}'
     volumes:
       - ${DIRECTORY}/config/code-server:/root
-      - ${DIRECTORY}/code:/workspace
+      - ${DIRECTORY}/code:/root/workspace
     ports:
       - 8001:8001
     labels:
