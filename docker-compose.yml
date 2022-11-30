@@ -6,7 +6,7 @@ services:
     build: .
     stdin_open: true
     tty: true
-    entrypoint: 'code-server serve-local --accept-server-license-terms --without-connection-token --quality=insiders --port=8001 --host=${HOST}'
+    entrypoint: 'code-server serve-local --accept-server-license-terms --without-connection-token --quality=insiders --port=8001 --host=${hostname -i}'
     volumes:
       - ${DIRECTORY}/config/code-server:/root
       - ${DIRECTORY}/code:/root/workspace
@@ -15,7 +15,6 @@ services:
     labels:
       - "traefik.http.routers.code-server.rule=Host(`dev.cheekysim.com`)"
       - "traefik.http.routers.code-server.middlewares=code-server-auth"
-      - "traefik.http.middlewares.code-server-auth.basicauth.removeheader=true"
       - "traefik.http.middlewares.code-server-auth.basicauth.users=admin:$$apr1$$X6kie6Kv$$Is22qC87hGx6kNAgyIW8d1"
     networks:
       - traefik
