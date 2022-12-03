@@ -6,7 +6,7 @@ services:
     build: .
     stdin_open: true
     tty: true
-    entrypoint: 'code-server serve-local --accept-server-license-terms --without-connection-token --quality=insiders --port=8001 --host=$(cat /etc/hosts | awk "/[0-9][0-9][0-9]\.[0-9][0-9]\.[0-9]\.[0-9]/{print $1}")'
+    entrypoint: 'code-server serve-local --accept-server-license-terms --without-connection-token --quality=insiders --port=8001 --host=${HOST}'
     volumes:
       - ${DIRECTORY}/config/code-server:/root
       - ${DIRECTORY}/code:/root/workspace
