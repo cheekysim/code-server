@@ -12,6 +12,7 @@ services:
       - ${DIRECTORY}/code:/root/workspace
     ports:
       - 8001:8001
+      - 3000:3000
     labels:
       - "traefik.http.routers.code-server.rule=Host(`dev.cheekysim.com`)"
       - "traefik.http.routers.code-server.middlewares=code-server-auth"
